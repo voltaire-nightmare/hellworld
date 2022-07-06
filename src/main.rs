@@ -36,8 +36,6 @@ fn main() {
     }
     debug!("Logging implementation initialized");
 
-
-
     // Load config file
     let config_filepath: String = match args.config_filepath {
         Some(v) => v,
@@ -56,13 +54,14 @@ fn main() {
     };
     debug!("{config_filepath} loaded as config");
 
-
-
     // Set the output string
     let output_string: String = match args.output_string {
         Some(v) => v,
         None => {
-            debug!("No output string set; defaulting to \"{}\"", config.output_string);
+            debug!(
+                "No output string set; defaulting to \"{}\"",
+                config.output_string
+            );
             config.output_string
         }
     };
